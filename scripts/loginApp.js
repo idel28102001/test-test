@@ -27,7 +27,7 @@ app.get("/", logs.auth(), (req, res) => {
 });
 
 app.post('/cafe/api', bodyParser.urlencoded({ extended: false }), async (req, res)=>{
-  const token = '5321849884:AAFmz5xhAakLs6uCfJPQjU0hiLccYjG0Ozc';
+  const token = '';
   const bot = new Telegraf(token);
   const data =  req.body;
   console.log(data);
@@ -41,7 +41,7 @@ app.post('/cafe/api', bodyParser.urlencoded({ extended: false }), async (req, re
         {message_text:result.text,parse_mode:'html'}}));
   await bot.telegram.sendInvoice(data._auth.user.id,{
       //need_phone_number: true, need_shipping_address: true,
-      provider_token:'381764678:TEST:37408', send_phone_number_to_provider: true,title:'ОПЛАТА ЗАКАЗА НОМЕР 123', description:'das',currency: 'RUB', prices: [{label: 'Руб', amount: 1000}],
+      provider_token:'', send_phone_number_to_provider: true,title:'ОПЛАТА ЗАКАЗА НОМЕР 123', description:'das',currency: 'RUB', prices: [{label: 'Руб', amount: 1000}],
 
     // payload:'dsa',
     //need_name: true,
